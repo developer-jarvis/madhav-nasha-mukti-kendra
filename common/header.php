@@ -1,16 +1,15 @@
 <?php
 $baseUrl = "http://localhost/nmk/";
 ?>
-<header class="main-header">
-    <!-- Header Top -->
-    <div class="header-top">
-        <div class="container text-center">
-            <ul class="info-list clearfix mt-3">
-                <li><strong>Opening Hours </strong>: Monday to Sunday - 8am to 10pm</li>
-            </ul>
-        </div>
-    </div>
 
+<style>
+    @media screen and (max-width: 767px) {
+        .main-header .upper-right {
+            display: none;
+        }
+    }
+</style>
+<header class="main-header">
     <!-- Header Upper -->
     <div class="header-upper">
         <div class="auto-container clearfix">
@@ -64,101 +63,112 @@ $baseUrl = "http://localhost/nmk/";
                 <div class="get-btn">
                     <a href="tel:+919905776271" class="theme-btn appt-btn">+91 99057 76271</a>
                 </div>
+
+                <div class="d-lg-none d-flex align-items-center justify-content-center gap-2 px-2 pt-2 mx-auto mb-1">
+                    <a href="https://wa.me/919905776271" class="btn btn-success btn-lg py-2" target="_blank">
+                        <i class="bi bi-whatsapp"></i> WhatsApp
+                    </a>
+                    <a href="tel:+919905776271" class="btn btn-primary btn-lg">
+                        <i class="bi bi-telephone-fill"></i> Call Now
+                    </a>
+                </div>
             </div>
+
+
         </div>
     </div>
 </header>
 
 <style>
-/* Sticky header-lower */
-#stickyHeader.sticky {
-    position: fixed !important;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 9999;
-    background: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-}
+    /* Sticky header-lower */
+    #stickyHeader.sticky {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+        background: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    }
 
-/* Desktop menu */
-#navMenu {
-    display: flex;
-    justify-content: center;
-}
-
-/* Mobile toggle button */
-.navbar-toggle {
-    display: none;
-    cursor: pointer;
-    border: none;
-    background: transparent;
-}
-
-.navbar-toggle span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px 0;
-    background-color: #000;
-}
-
-/* Mobile Menu */
-@media (max-width: 991px) {
+    /* Desktop menu */
     #navMenu {
-        display: none;
-        flex-direction: column !important;
-        width: 100%;
-        width: 100%;
-        margin-top: 10px;
+        display: flex;
+        justify-content: center;
     }
 
-    #navMenu.show {
-        display: flex !important;
-        flex-direction: column !important;
-    }
-
-    #navMenu ul {
-        flex-direction: column !important;
-    }
-
-    .navigation li {
-        width: 100%;
-        text-align: start;
-        /* margin: 5px 0; */
-    }
-
+    /* Mobile toggle button */
     .navbar-toggle {
-        display: block;
+        display: none;
+        cursor: pointer;
+        border: none;
+        background: transparent;
     }
-}
+
+    .navbar-toggle span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px 0;
+        background-color: #000;
+    }
+
+    /* Mobile Menu */
+    @media (max-width: 991px) {
+        #navMenu {
+            display: none;
+            flex-direction: column !important;
+            width: 100%;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        #navMenu.show {
+            display: flex !important;
+            flex-direction: column !important;
+        }
+
+        #navMenu ul {
+            flex-direction: column !important;
+        }
+
+        .navigation li {
+            width: 100%;
+            text-align: start;
+            /* margin: 5px 0; */
+        }
+
+        .navbar-toggle {
+            display: block;
+        }
+    }
 </style>
 
 <script>
-// Sticky header-lower
-const stickyHeader = document.getElementById('stickyHeader');
-window.addEventListener('scroll', function() {
-    if (window.scrollY > 300) {
-        stickyHeader.classList.add('sticky');
-    } else {
-        stickyHeader.classList.remove('sticky');
-    }
-});
-
-// Mobile menu toggle
-const toggleBtn = document.getElementById('mobileToggle');
-const navMenu = document.getElementById('navMenu');
-
-toggleBtn.addEventListener('click', function() {
-    navMenu.classList.toggle('show');
-});
-
-// Close mobile menu after clicking a link
-navMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', function() {
-        if (window.innerWidth < 992) {
-            navMenu.classList.remove('show');
+    // Sticky header-lower
+    const stickyHeader = document.getElementById('stickyHeader');
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 300) {
+            stickyHeader.classList.add('sticky');
+        } else {
+            stickyHeader.classList.remove('sticky');
         }
     });
-});
+
+    // Mobile menu toggle
+    const toggleBtn = document.getElementById('mobileToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    toggleBtn.addEventListener('click', function () {
+        navMenu.classList.toggle('show');
+    });
+
+    // Close mobile menu after clicking a link
+    navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function () {
+            if (window.innerWidth < 992) {
+                navMenu.classList.remove('show');
+            }
+        });
+    });
 </script>
